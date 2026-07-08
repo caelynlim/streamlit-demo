@@ -40,7 +40,7 @@ hobby = st.selectbox("Select your main hobby:", Selectboxhobbies)
 st.write("Your main hobby is:", hobby)
 
 # Multiselect - lets the user pick more than one hobby
-selected = st.multiselect("Pick all your hobbies:", hobbies)
+selected = st.multiselect("Pick all your hobbies:", Selectboxhobbies)
 
 # Loop through the selected hobbies and display each one
 if selected:
