@@ -1,3 +1,20 @@
+def generate_greeting(name, gender):
+    """Return a personalised greeting based on name and gender."""
+    title = "Mr." if gender == "Male" else "Ms."
+    greeting = f"Welcome {title} {name.title()}!"
+    return greeting
+
+def get_level_description(level):
+    """Return a word description for the numeric level."""
+    descriptions = {
+        1: "Beginner",
+        2: "Elementary",
+        3: "Intermediate",
+        4: "Advanced",
+        5: "Expert"
+    }
+    return descriptions[level]
+
 import streamlit as st
 from PIL import Image
 
@@ -28,11 +45,9 @@ if st.checkbox("Show message"):
    
 # Radio button
 gender = st.radio("Select Gender:", ['Male', 'Female'])
-st.success(f"Selected: {gender}")
-if gender == "Male":
-    st.write("You have chosen Male")
-else:
-    st.write("You have chosen Female")
+
+# Use the generate_greeting function instead of if/else
+# (We need the name variable too, so this will work with the text input below)
 
 #Selectbox
 Selectboxhobbies = ["Dancing", "Reading", "Sports", "Gaming", "Cooking", "Music", "Photography", "Gardening"]
@@ -72,7 +87,7 @@ else:
 
 # Slider
 level = st.slider("Choose a level", 1, 5)
-st.write(f"Selected level: {level}")
+st.write(f"Your level: {get_level_description(level)}")
 
 # Text input with string processing
 name = st.text_input("Enter your name", "Type here...")
@@ -88,7 +103,7 @@ if st.button("Submit"):
             st.error("Name should contain letters only!")
         else:
             # Display string method results
-            st.success(f"Hello, {name.title()}!")
+            st.success(generate_greeting(name, gender))
             st.write(f"Uppercase: {name.upper()}")
             st.write(f"Lowercase: {name.lower()}")
             st.write(f"Number of characters: {len(name)}")
