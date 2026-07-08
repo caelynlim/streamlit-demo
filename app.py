@@ -36,7 +36,7 @@ else:
 
 # Selectboxhobbies = ["Dancing", "Reading", "Sports", "Gaming", "Cooking", "Music", "Photography", "Gardening"]
 
-hobby = st.selectbox("Select your main hobby:", hobbies)
+hobby = st.selectbox("Select your main hobby:", Selectboxhobbies)
 st.write("Your main hobby is:", hobby)
 
 # Multiselect - lets the user pick more than one hobby
