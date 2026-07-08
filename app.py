@@ -34,7 +34,7 @@ if gender == "Male":
 else:
     st.write("You have chosen Female")
 
-# Selectboxhobbies = ["Dancing", "Reading", "Sports", "Gaming", "Cooking", "Music", "Photography", "Gardening"]
+Selectboxhobbies = ["Dancing", "Reading", "Sports", "Gaming", "Cooking", "Music", "Photography", "Gardening"]
 
 hobby = st.selectbox("Select your main hobby:", Selectboxhobbies)
 st.write("Your main hobby is:", hobby)
