@@ -13,7 +13,7 @@ st.text("This is plain text.")
 st.markdown("**This is bold markdown text.**")
 
 # Display status messages
-st.success("Operation successful!")
+st.success("**Operation successful!**")
 st.info("Here is some information.")
 st.warning("This is a warning.")
 st.error("An error occurred.")
